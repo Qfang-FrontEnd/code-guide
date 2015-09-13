@@ -40,6 +40,12 @@ layout: default
       <li><a href="#css-organization">代码组织</a></li>
     </ul>
   </div>
+  <div class="col">
+    <h4><a href="#editor">编辑器配置</a></h4>
+    <ul>
+      <li><a href="#sublimetext3">Sublime Text 3</a></li>
+    </ul>
+  </div>
 </div>
 
 
@@ -392,16 +398,78 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="css-editor-prefs">
+
+<div class="heading" id="editor">
+  <h2>编辑器配置</h2>
+</div>
+<div class="section" id="sublimetext3">
   <div class="col">
-    <h3>编辑器配置</h3>
-    <p>根据以下的设置来配置你的编辑器，来避免常见的代码不一致和丑陋的 diffs。</p>
-    <ul>
-      <li>使用两个空格的 soft-tabs。</li>
-      <li>在保存时删除尾部的空白字符。</li>
-      <li>设置文件编码为 UTF-8。</li>
-      <li>在文件结尾添加一个空白行。</li>
-    </ul>
-    <p>参照文档，将这些设置应用到项目的 <code>.editorconfig</code> 文件。 例如，<a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">Bootstrap 中的 <code>.editorconfig</code> 文件</a>。 通过 <a href="http://editorconfig.org">关于 EditorConfig</a> 了解更多内容。</p>
+    <h3>Sublime Text 3</h3>
+    <ol>
+      <li>
+        <p>安装 Sublime Text 3 <a href="https://packagecontrol.io/installation#st3">Package Control</a></p>
+        <ul>
+          <li>按下 <code>ctrl+`</code></li>
+          <li>复制粘贴以下代码
+            <p><code>import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)</code></p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>安装 Sublime Text 3 插件</p>
+        <ul>
+          <li>按下 <code>ctrl+shift+p</code>，输入'ip'（Install Package）</li>
+          <li>
+            <p>输入以下插件的名字，按顺序逐个进行安装：</p>
+            <ul style="list-style: circle;">
+              <li><code>SublimeLinter</code></li>
+              <li><code>SublimeLinter-jscs</code></li>
+              <li><code>JSCS-Formatter</code></li>
+              <li><code>Emmet</code></li>
+              <li><code>HTML-CSS-JS Prettify</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>安装 Node 包</p>
+        <ul>
+          <li>jscs <code>npm install jscs -g</code></li>
+        </ul>
+      </li>
+      <li>
+        <p>插件的配置文件</p>
+        <p>将以下配置文件下载后放入项目根目录中：</p>
+        <ul>
+          <li><code>JSCS</code> <a href=".jscsrc" download=".jscsrc">配置文件</a></li>
+        </ul>
+      </li>
+      <li>
+        <p>编辑器及插件设置</p>
+        <ul>
+          <li>
+            <p><code>Sublime Text 3</code> 自身</p>
+            <p>Preferences->Setting-User，增加以下配置：</p>
+            <div class="highlight"><pre>
+<code class="language-json" data-lang="json">
+  <span class="p">{</span>
+    <span class="nt">&quot;draw_white_space&quot;</span><span class="p">:</span> <span class="kc">all</span><span class="p">,</span>
+    <span class="nt">&quot;tab_size&quot;</span><span class="p">:</span> <span class="kc">2</span><span class="p">,</span>
+    <span class="nt">&quot;translate_tabs_to_spaces&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;trim_automatic_white_space&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;trim_trailing_white_space_on_save&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;word_wrap&quot;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+</code>
+        　　</pre></div>
+            <p>点击右下角的 Spaces->Convert Indentation to Spaces 可以将文件中的所有 tab 转换成空格</p>
+          </li>
+          <li>
+            <p><code>HTML-CSS-JS Prettify</code></p>
+            <p>右键 -> HTML-CSS-JS Prettify -> Set Prettify Preferences，修改 html / css / js 中选项 &quot;indent_size&quot; 为：2</p>
+          </li>
+        </ul>
+      </li>
+    </ol>
   </div>
 </div>
