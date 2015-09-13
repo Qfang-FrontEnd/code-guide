@@ -31,7 +31,6 @@ layout: default
       <li><a href="#css-media-queries">媒体查询位置</a></li>
       <li><a href="#css-import">不要使用 @import</a></li>
       <li><a href="#css-prefixed-properties">前缀属性</a></li>
-      <li><a href="#css-single-declarations">单条声明的声明块</a></li>
       <li><a href="#css-shorthand">属性简写</a></li>
       <li><a href="#css-nesting">LESS 和 SASS 中的嵌套</a></li>
       <li><a href="#css-operators">LESS 和 SASS 中的运算符</a></li>
@@ -286,17 +285,6 @@ layout: default
   </div>
   <div class="col">
     {% highlight css %}{% include css/prefixed-properties.css %}{% endhighlight %}
-  </div>
-</div>
-
-<div class="section" id="css-single-declarations">
-  <div class="col">
-    <h3>单条声明的声明块</h3>
-    <p>在一个声明块中<strong>只包含一条声明</strong>的情况下，为了易读性和快速编辑可以考虑移除其中的换行。所有包含多条声明的声明块应该分为多行。</p>
-    <p>这样做的关键因素是错误检测 - 例如，一个 CSS 验证程序显示你在 183 行有一个语法错误,如果是一个单条声明的行，那就是他了。在多个声明的情况下，你必须为哪里出错了费下脑子。</p>
-  </div>
-  <div class="col">
-    {% highlight css %}{% include css/single-declarations.css %}{% endhighlight %}
   </div>
 </div>
 
