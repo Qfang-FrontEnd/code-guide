@@ -1,9 +1,12 @@
 {
   "preset": "airbnb",
+  /*"disallowAnonymousFunctions": true,*/
+  "disallowMultipleSpaces": true,
+  "disallowSpaceBeforeObjectValues": false,
   "disallowTrailingComma": true,
-  "requireTrailingComma": false,
-  "disallowAnonymousFunctions": true,
   "requireCamelCaseOrUpperCaseIdentifiers": true,
   "requireMatchingFunctionName": true,
-  "requireCurlyBraces": true
+  "requireCurlyBraces": true,
+  "requireSpaceBeforeObjectValues": true,
+  "requireTrailingComma": false
 }
