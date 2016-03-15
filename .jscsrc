@@ -8,5 +8,6 @@
   "requireMatchingFunctionName": true,
   "requireCurlyBraces": true,
   "requireSpaceBeforeObjectValues": true,
-  "requireTrailingComma": false
+  "requireTrailingComma": false,
+  "validateQuoteMarks": "'"
 }
